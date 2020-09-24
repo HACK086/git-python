@@ -5,7 +5,7 @@ np.random.RandomState(42)
 
 print(np.random.random(42)(1))
 print(np.random.random(42)(1))
-
+----------------------------------------------------------------------------
 import pygame, sys, time
 
 pygame.init()
