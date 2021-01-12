@@ -4,6 +4,10 @@
 # k - секунды, когда ребенок находился в зоне видимости взрослого
 # reb - зона видимости ребенка
 # vzr - зона видимости взрослого
+# x1 - координата взрослого на оси X
+# y1 - координата взрослого на оси Y
+# х2 - координата ребенка на оси Х
+# y2 - координата ребенка на оси Y
 #1)Прибавляем к времени 1 секунду
 #2)Рассматриваем вариант конца времени(tmax=t?)
 #3)Сгенерируем число от 1 до 4(для ребенка и взрослого)
@@ -21,54 +25,56 @@ r = 0
 k = 0
 x = 300
 y = 300
-
+x1 = 1
+x2 = 300
+y1 = 1
+y2 = 300
 #1 и 2
 t = 0
 while t <= 600:
     print(t)
     t += 1
 
-#3
-object1 = random.randint(1, 4)
-print(object1)
+    #3
+    object1 = random.randint(1, 4)
+    print(object1)
 
-object2 = random.randint(1, 4)
-print(object2)
-#пусть 1- движение вправо, 2-вниз, 3-влево, 4-вверх. Далее в пункте 4 в зависимости от сгенерированного числа нужно
-#обновлять координаты с помощью заявления "if"
+    object2 = random.randint(1, 4)
+    print(object2)
+    #пусть 1- движение вправо, 2-вниз, 3-влево, 4-вверх. Далее в пункте 4 в зависимости от сгенерированного числа нужно
+    #обновлять координаты с помощью заявления "if"
 
-#4
+    #4
+    if object1 == 1:
+        x1 = x1 + 1
+    elif object1 == 3:
+        x1 = x1 - 1
+    if object1 == 2:
+        y1 = y1 - 1
+    elif object1 == 4:
+        y1 = y1 + 1
 
-if object1 == 1 or 3:
-    x = newX
-elif object1 == 2 or 4:
-    y = newY
+    if object2 == 1:
+        x2 = x2 + 1
+    elif object2 == 3:
+        x2 = x2 - 1
+    if object2 == 2:
+        y2 = y2 - 1
+    elif object2 == 4:
+        y2 = y2 +1
+    #5
 
-if object2 == 1 or 3:
-    x = newX
-elif object2 == 2 or 4:
-    y = newY
+    #6
+    def distance(x1, y1, x2, y2):
+        c = sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+        print(c)
+    #7
+    if c <= reb:
+        r = r + 1
+    else:
+        print("Идем дальше")
 
-#5
-x = float(input('Введите x='))
-y = float(input('Введите y='))
-
-if (0<=math.fabs(x)<=300 and 0<=math.fabs(y)<=300) or (0<=math.fabs(x)<=300 and 0<=math.fabs(y)<=300):
-   print('Объект на территории')
-else:
-   print('Объект вне территории')
-
-#6
-def distance(x1, y1, x2, y2):
-    c = sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
-    print(c)
-#7
-if c <= reb:
-    r = r + 1
-else:
-    print("Идем дальше")
-
-if c <= vzr:
-    k = k + 1
-else:
-    print("Идем дальше")
+    if c <= vzr:
+        k = k + 1
+    else:
+        print("Идем дальше")
