@@ -29,6 +29,7 @@ x1 = 1
 x2 = 300
 y1 = 1
 y2 = 300
+
 #1 и 2
 t = 0
 while t <= 600:
@@ -63,7 +64,22 @@ while t <= 600:
     elif object2 == 4:
         y2 = y2 + 1
     #5
-
+    if x1 >= 301:
+        x1 = 1
+    elif x1 <= 0:
+        x1 = 300
+    if y1 >= 301:
+        y1 = 1
+    elif y1 <= 0:
+        y1 = 300
+    if x2 >= 301:
+        x2 = 1
+    elif x2 <= 0:
+        x2 = 300
+    if y2 >= 301:
+        y2 = 1
+    elif y2 <= 0:
+        y2 = 300
     #6
     def distance(x1, y1, x2, y2):
         c = sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
