@@ -61,7 +61,7 @@ while t <= 600:
     if object2 == 2:
         y2 = y2 - 1
     elif object2 == 4:
-        y2 = y2 +1
+        y2 = y2 + 1
     #5
 
     #6
@@ -69,12 +69,14 @@ while t <= 600:
         c = sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
         print(c)
     #7
-    if c <= reb:
-        r = r + 1
-    else:
-        print("Идем дальше")
+        if c <= reb:
+            r = r + 1
+            print(r)
+        else:
+            print("Идем дальше")
 
-    if c <= vzr:
-        k = k + 1
-    else:
-        print("Идем дальше")
+        if c <= vzr:
+            k = k + 1
+            print(k)
+        else:
+            print("Идем дальше")
