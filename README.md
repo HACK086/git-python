@@ -1,2 +1,0 @@
-# git-python
-Изучаем Git
