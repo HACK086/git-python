@@ -29,9 +29,14 @@ x1 = 1
 x2 = 300
 y1 = 1
 y2 = 300
+c = 0
+
+def distance(x1, y1, x2, y2):
+    c = sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+
 
 #1 и 2
-t = 0
+t = 1
 while t <= 600:
     print(t)
     t += 1
@@ -39,9 +44,8 @@ while t <= 600:
     #3
     object1 = random.randint(1, 4)
     print(object1)
-
     object2 = random.randint(1, 4)
-    print(object2)
+    print(object2 )
     #пусть 1- движение вправо, 2-вниз, 3-влево, 4-вверх. Далее в пункте 4 в зависимости от сгенерированного числа нужно
     #обновлять координаты с помощью заявления "if"
 
@@ -81,18 +85,20 @@ while t <= 600:
     elif y2 <= 0:
         y2 = 300
     #6
-    def distance(x1, y1, x2, y2):
-        c = sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
-        print(c)
+    distance(x1, y1, x2, y2)
     #7
-        if c <= reb:
-            r = r + 1
-            print(r)
-        else:
-            print("Идем дальше")
 
-        if c <= vzr:
-            k = k + 1
-            print(k)
-        else:
-            print("Идем дальше")
+    if c <= reb:
+        r = r + 1
+
+
+
+    if c <= vzr:
+        k = k + 1
+
+
+print(r)
+print(k)
+
+
+
