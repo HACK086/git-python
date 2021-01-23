@@ -19,8 +19,9 @@
 from math import *
 import random
 import math
-reb = 40
-vzr = 20
+
+reb = 80
+vzr = 40
 r = 0
 k = 0
 x = 300
@@ -31,74 +32,64 @@ y1 = 1
 y2 = 300
 c = 0
 
+
 def distance(x1, y1, x2, y2):
     c = sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+    return c
 
 
-#1 и 2
+# 1 и 2
 t = 1
 while t <= 600:
-    print(t)
     t += 1
 
-    #3
+    # 3
     object1 = random.randint(1, 4)
-    print(object1)
-    object2 = random.randint(1, 4)
-    print(object2 )
-    #пусть 1- движение вправо, 2-вниз, 3-влево, 4-вверх. Далее в пункте 4 в зависимости от сгенерированного числа нужно
-    #обновлять координаты с помощью заявления "if"
 
-    #4
-    if object1 == 1:
+    object2 = random.randint(1, 4)
+
+    # пусть 1- движение вправо, 2-вниз, 3-влево, 4-вверх. Далее в пункте 4 в зависимости от сгенерированного числа нужно
+    # обновлять координаты с помощью заявления "if"
+
+    # 4
+    if object1 % 2 == 1:
         x1 = x1 + 1
-    elif object1 == 3:
-        x1 = x1 - 1
-    if object1 == 2:
-        y1 = y1 - 1
-    elif object1 == 4:
+
+    elif object1 % 2 == 0:
         y1 = y1 + 1
 
-    if object2 == 1:
-        x2 = x2 + 1
-    elif object2 == 3:
+    if object2 % 2 == 1:
         x2 = x2 - 1
-    if object2 == 2:
+
+    elif object2 % 2 == 0:
         y2 = y2 - 1
-    elif object2 == 4:
-        y2 = y2 + 1
-    #5
-    if x1 >= 301:
+
+    # 5
+    if x1 == 301:
         x1 = 1
-    elif x1 <= 0:
+    elif x1 == -1:
         x1 = 300
-    if y1 >= 301:
+    if y1 == 301:
         y1 = 1
-    elif y1 <= 0:
+    elif y1 == -1:
         y1 = 300
-    if x2 >= 301:
+    if x2 == 301:
         x2 = 1
-    elif x2 <= 0:
+    elif x2 == -1:
         x2 = 300
-    if y2 >= 301:
+    if y2 == 301:
         y2 = 1
-    elif y2 <= 0:
+    elif y2 == -1:
         y2 = 300
-    #6
-    distance(x1, y1, x2, y2)
-    #7
+    # 6
+    c = distance(x1, y1, x2, y2)
+    # 7
 
     if c <= reb:
         r = r + 1
 
-
-
     if c <= vzr:
         k = k + 1
 
-
 print(r)
 print(k)
-
-
-
