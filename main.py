@@ -27,8 +27,7 @@ def main():
         rw.append(tr)
         kw.append(tk)
     midr, pin_r = fun.fun(rw, n, p, ts)
-    print(
-        'В среднем ребёнок видит взрослого \n{:.3f} {} {:.3f} секунд\n '.format(midr, ss, pin_r))
+    print('В среднем ребёнок видит взрослого \n{:.3f} {} {:.3f} секунд\n '.format(midr, ss, pin_r))
     midk, pin_k = fun.fun(kw, n, p, ts)
     print('В среднем взрослый видит ребёнка \n{:.3f} {} {:.3f} секунд '.format(midk, ss, pin_k))
 
