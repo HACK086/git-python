@@ -2,6 +2,7 @@ import walk
 import fun
 
 
+
 def main():
     reb = 80
     vzr = 40
